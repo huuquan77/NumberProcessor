@@ -14,3 +14,19 @@ public class NumberProcessorTest {
         assertEquals(9, result); // 3 + 6
     }
 }
+@Test
+public void testAllPaths() {
+    NumberProcessor np = new NumberProcessor();
+
+    // Không chẵn, không chia hết cho 3
+    assertEquals(0, np.process(Arrays.asList(1)));
+
+    // Chẵn, không chia hết cho 3
+    assertEquals(0, np.process(Arrays.asList(2)));
+
+    // Không chẵn, chia hết cho 3
+    assertEquals(3, np.process(Arrays.asList(3)));
+
+    // Chẵn và chia hết cho 3
+    assertEquals(6, np.process(Arrays.asList(6)));
+}
